@@ -1,4 +1,4 @@
-﻿@{
+@{
     Layout = "";
 }
 @model Grand.Plugin.Shipping.UPS.Models.UPSShippingModel
@@ -74,7 +74,7 @@
                     @Html.GrandLabelFor(model => model.CustomerClassification, new Dictionary<string, object> { { "class", "control-label" } }, false)
                 </div>
                 <div class="col-md-9 col-sm-9">
-                    @Html.DropDownListFor(model => model.CustomerClassification, Model.AvailableCustomerClassifications)
+                    @Html.GrandDropDownListFor(model => model.CustomerClassification, Model.AvailableCustomerClassifications)
                     @Html.ValidationMessageFor(model => model.CustomerClassification)
                 </div>
             </div>
@@ -83,7 +83,7 @@
                     @Html.GrandLabelFor(model => model.PickupType, new Dictionary<string, object> { { "class", "control-label" } }, false)
                 </div>
                 <div class="col-md-9 col-sm-9">
-                    @Html.DropDownListFor(model => model.PickupType, Model.AvailablePickupTypes)
+                    @Html.GrandDropDownListFor(model => model.PickupType, Model.AvailablePickupTypes)
                     @Html.ValidationMessageFor(model => model.PickupType)
                 </div>
             </div>
@@ -92,7 +92,7 @@
                     @Html.GrandLabelFor(model => model.PackagingType, new Dictionary<string, object> { { "class", "control-label" } }, false)
                 </div>
                 <div class="col-md-9 col-sm-9">
-                    @Html.DropDownListFor(model => model.PackagingType, Model.AvailablePackagingTypes)
+                    @Html.GrandDropDownListFor(model => model.PackagingType, Model.AvailablePackagingTypes)
                     @Html.ValidationMessageFor(model => model.PackagingType)
                 </div>
             </div>
@@ -119,7 +119,7 @@
                     @Html.GrandLabelFor(model => model.AvailableCarrierServices, new Dictionary<string, object> { { "class", "control-label" } }, false)
                 </div>
                 <div class="col-md-9 col-sm-9">
-                    <div style="height: 250px; width: 300px; overflow: auto; border: solid 1px #bbb;">
+                    <div>
                         @foreach (var csd in Model.AvailableCarrierServices)
                         {
                             <input type="checkbox" name="CheckedCarrierServices" value="@(csd)" checked="@Model.CarrierServicesOffered.Contains(csd)" />
@@ -134,7 +134,7 @@
                     @Html.GrandLabelFor(model => model.PackingTypeValues, new Dictionary<string, object> { { "class", "control-label" } }, false)
                 </div>
                 <div class="col-md-9 col-sm-9">
-                    @Html.DropDownList("PackingType", Model.PackingTypeValues)
+                    @Html.GrandDropDownListFor(model => model.PackingType, Model.PackingTypeValues)
                 </div>
             </div>
             <div class="form-group" id="pnlPassDimensions">
